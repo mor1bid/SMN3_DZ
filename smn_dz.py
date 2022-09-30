@@ -1,5 +1,6 @@
 # # a - открытие для добавления данных (из файла); r - открытие для чтения; w - открытие для записи данных
 # # w+, r+
+# # Словарь: setdefault добавление ключа, get - получение значения ключа
 # from re import T
 # from typing import Concatenate
 
@@ -105,11 +106,39 @@
 # list2.insert(1, 3)
 # print(list1)
 
+# R = int(input('Введите желаемое значение длины массива: '))
+# kor = set()
+# print('Заполните массив из', R, 'элементов:')
+# for i in range(R):
+#     num = int(input())
+#     kor.add(num)
+# rok = sorted(kor)
+# print(rok)
+
+
+strip = ["u", "ro", "bo", "rr", "ow", "s", "y", "u"]
+res = 0
+it = input('Введение искомое значение элемента: ')
+for i in range(len(strip)):
+    if strip[i] == it:
+        res += 1
+    if res == 2:
+        print('Элемент ', it, 'найден на позиции', i)
+        break
+else:
+    print('Данная позиция не найдена')
+
 R = int(input('Введите желаемое значение длины массива: '))
-kor = set()
+List = []
 print('Заполните массив из', R, 'элементов:')
 for i in range(R):
-    num = int(input())
-    kor.add(num)
-rok = sorted(kor)
-print(rok)
+    num = input()
+    List.append(num)
+print(List)
+find = int(input('Введение искомый элемент: '))
+for i in range(len(List)):
+    if List[i].isdigit() and find==int(List[i]):
+        print('Искомое число ', find, 'находится на', i, 'позиции')
+        break
+else:
+    print('Данный элемент не найден в данном списке.')
