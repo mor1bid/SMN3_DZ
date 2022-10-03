@@ -9,11 +9,11 @@ print(ray)
 for i in range(si):
     if i%2!=0:
         res += ray[i]
-print('Сумма элементов данного списка =', res)
+print('Сумма элементов на нечётных позициях в данном списке =', res)
 
 i2 = 0
 ar = []
-print('2. Произведение пар элементов на нечётных позициях в данном списке =', end=' ')
+print('2. Произведение пар элементов в данном списке =', end=' ')
 for i in range(si):
     if i<si/2:
         i2-=1
@@ -21,13 +21,17 @@ for i in range(si):
         ar.append(res)
 print(ar)
 
-strip = [1.1, 1.2, 3.1, 5, 10.01]
-big = 0
-tin = 0
-print('3. Разность между максимальным и минимальным значениями данного списка =', end='')
+import random
+strip = []
+for i in range(si):
+    num = round(random.uniform(-10.1, 10.1), 2)
+    strip.append(num)
+big = strip[0]
+tin = strip[0]
+print('3.', strip, '\n' 'Разность между максимальным и минимальным значениями данного списка =', end=' ')
 for i in strip:
-    if i%1>big:
+    if i%1>=big%1:
         big=i
-    elif i%1<tin:
+    elif i%1<=tin%1 and i%1!=0:
         tin=i
-print(strip, '-', big, '-', tin, '=', big-tin)
+print(big, '-', tin, '=', round((big%1)-(tin%1), 2))
