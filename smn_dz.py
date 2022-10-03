@@ -36,15 +36,26 @@
 #         tin=i
 # print(big, '-', tin, '=', round((big%1)-(tin%1), 2))
 
-num = input('4. Введите число, которое желаете перевести в двоичное: ')
-co = 0
-for i in num:
-# while i<len(num):
-    numa=int(num)%10
-    if i.isdigit:
-        while int(i)%10!=0:
-            # numa = int(i)%2
-            i=int(i)//2
-            print(i, end='')
-    # num/=10
-    # i+=1
+# num = input('4. Введите число, которое желаете перевести в двоичное: ')
+# co = 0
+# for i in num:
+#     numa=int(num)%10
+#     if i.isdigit:
+#         while int(i)%10!=0:
+#             i=int(i)//2
+#             print(i, end='')
+
+n = int(input('5. Введите число: '))
+def fib(n):
+    if n in [1, 2]:
+        return 1
+    else:
+        return fib(n-1)+fib(n-2)
+
+plusl = []
+minusl = []
+for i in range(1, n):
+    plusl.append(fib(i))
+    minusl.append(fib(i)*-1)
+print(minusl)
+print(plusl)
