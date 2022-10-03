@@ -45,14 +45,11 @@
 #             i=int(i)//2
 #             print(i, end='')
 
+
 n = int(input('5. Введите число: '))
 def fib(n):
-    co = 0
     if n in [1, 2]:
         return 1
-    # elif co<n:
-    #     co+=1
-    #     return (fib(n-1)+fib(n-2))*-1
     else:
         return fib(n-1)+fib(n-2)
 
@@ -61,5 +58,7 @@ minusl = []
 for i in range(1, n):
     plusl.append(fib(i))
     minusl.append(fib(i)*-1)
-# print(minusl)
-print(plusl)
+minusl.sort(reverse=False)
+for i in plusl:
+    minusl.append(i)
+print(minusl)
