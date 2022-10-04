@@ -36,29 +36,36 @@
 #         tin=i
 # print(big, '-', tin, '=', round((big%1)-(tin%1), 2))
 
-# num = input('4. Введите число, которое желаете перевести в двоичное: ')
-# co = 0
-# for i in num:
-#     numa=int(num)%10
-#     if i.isdigit:
-#         while int(i)%10!=0:
-#             i=int(i)//2
-#             print(i, end='')
-
-
-n = int(input('5. Введите число: '))
-def fib(n):
-    if n in [1, 2]:
-        return 1
+num = input('4. Введите число, которое желаете перевести в двоичное: ')
+bin = []
+co = 0
+for i in num:
+    if i.isdigit():
+        i = int(i)
+        while i>0:
+            co=i%2
+            i = i // 2
+            bin.append(co)
     else:
-        return fib(n-1)+fib(n-2)
+        print('Заданное значение не является числом.')
+        exit()
+for i in reversed(bin):
+    print(i, end='')
 
-plusl = []
-minusl = []
-for i in range(1, n):
-    plusl.append(fib(i))
-    minusl.append(fib(i)*-1)
-minusl.sort(reverse=False)
-for i in plusl:
-    minusl.append(i)
-print(minusl)
+
+# n = int(input('5. Введите число: '))
+# def fib(n):
+#     if n in [1, 2]:
+#         return 1
+#     else:
+#         return fib(n-1)+fib(n-2)
+
+# plusl = []
+# minusl = []
+# for i in range(1, n):
+#     plusl.append(fib(i))
+#     minusl.append(fib(i)*-1)
+# minusl.sort(reverse=False)
+# for i in plusl:
+#     minusl.append(i)
+# print(minusl)
